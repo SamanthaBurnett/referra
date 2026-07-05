@@ -1,5 +1,12 @@
 # Changelog
 
+## 2 - Local Database Setup
+### Updates:
+- Configured PostgreSQL using Docker Compose.
+- Connected Spring Boot to the local PostgreSQL instance.
+- Removed temporary datasource auto-configuration exclusions.
+- Verified backend starts successfully with the configured database.
+
 ## 1 - Project Setup
 ### Updates:
 - Initialized backend
