@@ -1,5 +1,10 @@
 # Changelog
 
+## 3 - Initial Flyway Migration
+### Updates:
+- Added versioned db schema using Flyaway
+- Successfully applied the initial schema migration.
+
 ## 2 - Local Database Setup
 ### Updates:
 - Configured PostgreSQL using Docker Compose.
