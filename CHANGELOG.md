@@ -1,5 +1,10 @@
 # Changelog
 
+## 4 - Add Spring Security JWT Validation
+### Updates:
+- Added cognito config
+- Added security config
+
 ## 3 - Initial Flyway Migration
 ### Updates:
 - Added versioned db schema using Flyaway
