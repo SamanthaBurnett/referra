@@ -1,5 +1,13 @@
 # Changelog
 
+## 7 - Role Onboarding
+### Updates:
+- Added role onboarding endpoint for authenticated users.
+- Added `UserRoleService` to manage user role retrieval and assignment.
+- Added support for retrieving assigned roles through `/api/users/me`.
+- Restricted MVP onboarding to a single user-selected role.
+-  Refactored `CurrentUserService` to delegate role management to `UserRoleService`.
+
 ## 6 - User Roles
 ### Updates:
 - Added user role enum for `CANDIDATE`, `REFERRER`, and `ADMIN`.

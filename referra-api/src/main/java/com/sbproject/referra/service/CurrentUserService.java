@@ -3,30 +3,27 @@ package com.sbproject.referra.service;
 import com.sbproject.referra.dto.UserResponse;
 import com.sbproject.referra.model.User;
 import com.sbproject.referra.model.UserRole;
-import com.sbproject.referra.model.UserRoleEntity;
 import com.sbproject.referra.model.UserStatus;
 import com.sbproject.referra.repository.UserRepository;
-import com.sbproject.referra.repository.UserRoleRepository;
 import org.springframework.security.oauth2.jwt.Jwt;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.Instant;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 @Service
 public class CurrentUserService {
 
     private final UserRepository userRepository;
-    private final UserRoleRepository userRoleRepository;
+    private final UserRoleService userRoleService;
 
     public CurrentUserService(
             UserRepository userRepository,
-            UserRoleRepository userRoleRepository
+            UserRoleService userRoleService
     ) {
         this.userRepository = userRepository;
-        this.userRoleRepository = userRoleRepository;
+        this.userRoleService = userRoleService;
     }
 
     @Transactional
@@ -41,7 +38,15 @@ public class CurrentUserService {
     @Transactional
     public UserResponse getCurrentUserResponse(Jwt jwt) {
         User user = getOrCreateUser(jwt);
-        Set<UserRole> roles = getRoles(user);
+        Set<UserRole> roles = userRoleService.getRoles(user);
+
+        return UserResponse.from(user, roles);
+    }
+
+    @Transactional
+    public UserResponse addRole(Jwt jwt, UserRole role) {
+        User user = getOrCreateUser(jwt);
+        Set<UserRole> roles = userRoleService.addRole(user, role);
 
         return UserResponse.from(user, roles);
     }
@@ -59,12 +64,4 @@ public class CurrentUserService {
 
         return userRepository.save(user);
     }
-
-    private Set<UserRole> getRoles(User user) {
-        return userRoleRepository.findByUser(user)
-                .stream()
-                .map(UserRoleEntity::getRole)
-                .collect(Collectors.toSet());
-    }
 }
-

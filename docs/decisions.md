@@ -21,3 +21,7 @@
 ### Role Assignment
 
 - Roles are not automatically assigned during authentication. Instead, roles will be granted when users complete workflows such as creating a candidate profile or a referrer profile.
+
+### Single Role Onboarding (MVP)
+
+Although the database supports multiple roles per user through the `user_roles` table, Referra's MVP restricts users to selecting a single role during onboarding. This keeps onboarding, permissions, and the overall user experience simple while preserving the ability to support multiple roles in the future without requiring a database redesign.
