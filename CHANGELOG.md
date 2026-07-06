@@ -1,5 +1,12 @@
 # Changelog
 
+## 8 - Candidate Profile
+### Updates:
+- Added candidate profile flow
+- Prevented duplicate candidate profiles per user.
+- Added V3 Flyway migration to split candidate name into first and last name.
+- Added unit tests for candidate profile creation, ro
+
 ## 7 - Role Onboarding
 ### Updates:
 - Added role onboarding endpoint for authenticated users.

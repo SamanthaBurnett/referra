@@ -33,3 +33,19 @@ Unlike an email address, the `sub` never changes, making it the appropriate key 
 Spring Security can validate Cognito-issued JWTs by configuring the Cognito issuer URI.
 
 The backend only trusts requests that contain a valid JWT signed by Cognito.
+
+---
+
+## Milestone 3 - Profile & Role Onboarding
+
+### Flyway Migrations as Incremental Changes
+
+Each Flyway migration should contain only the schema changes introduced in that version, not a copy of the full schema.
+
+Flyway applies migrations in version order, so a new migration can safely alter tables created by earlier migrations.
+
+### Schema Evolution and Data Safety
+
+When changing columns in a table with existing data, safer migrations usually add the replacement column first, backfill data, and only then remove the old column.
+
+Referra currently has no candidate profile data, so the name-splitting migration can be simpler, but the safer ordering is still a useful production habit.
