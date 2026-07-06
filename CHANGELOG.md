@@ -1,5 +1,12 @@
 # Changelog
 
+## 5 - User Provisioning
+### Updates:
+- Added `User` entity
+- Added `UserStatus` enum
+- Added `UserRepository`
+- Added `CurrentUserService`
+
 ## 4 - Add Spring Security JWT Validation
 ### Updates:
 - Added cognito config
