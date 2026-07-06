@@ -1,5 +1,13 @@
 # Changelog
 
+## 6 - User Roles
+### Updates:
+- Added user role enum for `CANDIDATE`, `REFERRER`, and `ADMIN`.
+- Added user role entity mapped to the `user_roles` table.
+- Added repository support for user role lookup.
+- Updated current user response to include roles.
+- Added default `CANDIDATE` role provisioning for new users.
+
 ## 5 - User Provisioning
 ### Updates:
 - Added `User` entity
