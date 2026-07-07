@@ -1,5 +1,12 @@
 # Changelog
 
+## 9 - Company Profile
+### Updates:
+- Added company profile flow
+- Normalized company names and optional company fields before persistence.
+- Kept company creation internal for now instead of exposing a public company API.
+- Added unit tests
+
 ## 8 - Candidate Profile
 ### Updates:
 - Added candidate profile flow

@@ -29,3 +29,9 @@ Although the database supports multiple roles per user through the `user_roles` 
 ### Candidate Name Fields
 
 Candidate profiles store `first_name` and `last_name` separately instead of a single `full_name`. This supports cleaner display formatting, personalization, sorting, and future search behavior without needing to parse a full name string later.
+
+### Internal Company Support
+
+Company creation is internal for now and is not exposed through a public controller.
+
+Referrer profile creation will use `CompanyService` to find or create companies as needed. This keeps the user workflow centered on creating a referrer profile rather than managing company records directly.

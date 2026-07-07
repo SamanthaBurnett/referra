@@ -49,3 +49,9 @@ Flyway applies migrations in version order, so a new migration can safely alter 
 When changing columns in a table with existing data, safer migrations usually add the replacement column first, backfill data, and only then remove the old column.
 
 Referra currently has no candidate profile data, so the name-splitting migration can be simpler, but the safer ordering is still a useful production habit.
+
+### Find-or-Create Pattern
+
+The find-or-create pattern checks whether a record already exists before creating a new one.
+
+This is useful for shared reference data, such as companies, where multiple users may refer to the same organization.
