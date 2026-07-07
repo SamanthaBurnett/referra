@@ -35,3 +35,11 @@ Candidate profiles store `first_name` and `last_name` separately instead of a si
 Company creation is internal for now and is not exposed through a public controller.
 
 Referrer profile creation will use `CompanyService` to find or create companies as needed. This keeps the user workflow centered on creating a referrer profile rather than managing company records directly.
+
+### Company Metadata Ownership
+
+For MVP, referrers provide only `companyName` when creating or updating a referrer profile.
+
+Company records are shared reference data, so user-submitted metadata such as domain or website URL is not accepted through the referrer profile flow. This avoids conflicting company information from different users.
+
+Company metadata can be enriched later through admin tools or a controlled data source.

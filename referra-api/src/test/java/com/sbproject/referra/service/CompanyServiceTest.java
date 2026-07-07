@@ -23,6 +23,7 @@ class CompanyServiceTest {
     public static final String TEST_COMPANY_NAME = "TestCo";
     public static final String TEST_DOMAIN = "testco.com";
     public static final String TEST_COMPANY_URL = "https://testco.com";
+
     @Mock
     private CompanyRepository companyRepository;
 

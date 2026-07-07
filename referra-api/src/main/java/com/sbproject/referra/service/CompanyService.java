@@ -17,6 +17,11 @@ public class CompanyService {
     }
 
     @Transactional
+    public Company findOrCreateCompany(String name) {
+        return findOrCreateCompany(name, null, null);
+    }
+
+    @Transactional
     public Company findOrCreateCompany(String name, String domain, String websiteUrl) {
         String normalizedName = normalizeName(name);
 

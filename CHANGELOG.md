@@ -1,5 +1,12 @@
 # Changelog
 
+##  10 - Referrer Profile
+### Updates:
+- Added referrer profile flow
+- Prevented duplicate referrer profiles per user.
+- Added default max requests per week handling.
+- Added unit tests
+
 ## 9 - Company Profile
 ### Updates:
 - Added company profile flow
